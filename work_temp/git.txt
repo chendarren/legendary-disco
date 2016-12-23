@@ -1,0 +1,14 @@
+1.
+在Windows使用主控台時不可以輸入中文。所以在提交訊息時要使用中文的話，不要使用 -m 參數，要用外部編輯器來輸入。
+
+外部編輯器必須使用文字編碼為UTF-8，並使用換行字元為LF。
+
+git config --global core.editor "\"[外部編輯器的路徑]\""
+
+
+2.
+當要push變更到遠端數據庫時，請使用push命令，加上<repository>指定要push的地址，<refspec>指定要push的分支。
+
+關於『分支』我們會在進階篇再做更詳細的講解。
+
+$ git push <repository> <refspec>...

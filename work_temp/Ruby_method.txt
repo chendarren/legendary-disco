@@ -1,0 +1,138 @@
+input語法:
+	varName = gets.chomp
+
+	array_name = varString.split("字元") =>把字串以"字元"為主剪成幾段放進array_name陣列中；arrName.split後沒寫就是用空白鍵去剪了
+
+字串中變數應用:
+	#{var_Name}
+
+字串method:
+	"字串".capitalize!	首字大寫
+	"字串".upcase!		全部大寫
+	"字串".downcase!	全部小寫
+	"字串".reverse		字串倒反
+
+*所有method可以串聯用，比方說 "字串".upcase!.reverse 這行就是全小寫後倒反過來。
+
+	"字串".include? "substring" 		=>在"字串"內搜尋"subtring"；(回傳值)有：true、沒有：false
+	"字串".gsub?(/substring/,"replacement")	=>在"字串"內搜尋"subtring"然後用"replacement"取代
+	*gsub為global substitution的意思
+
+迴圈語法：
+	while迴圈:
+	while (condition)		while (condition) do
+		statement			statement
+	end				end
+
+	until:
+	until i >50 do		當i大於50時就停止
+		statement
+	end
+
+	if~else:
+	if (condition1)
+		statement1
+	elsif (condition2)
+		statement2
+	else
+		statement3
+	end
+
+	unless~else:		*當condition為false時，會跑statement1
+	unless	(condition)
+		statement1
+	else
+		statement2
+	end
+	
+	for迴圈:
+	for i in 1...10	=>i會從1跑到9,不包含10(三個點)	
+	for i in 1..10	=>i會從1跑到10(兩個點)
+
+	範圍也可寫成n-1
+	for i in 2..n-1
+    		if n % i == 0
+      			is_prime = false
+    		end
+  	end
+
+	loop迴圈:	*類似do~while，當condition為true時停止
+	loop do
+		statement
+	break if (condition)
+	end
+
+	next:
+	這關鍵字是放在迴圈裡用，當遇到某特殊condition時就跳過不執行
+	舉例: 當i為偶數時就不印出
+	for i in 1..10
+		next if i%2==0
+		print i
+	end
+
+操作method:	
+	1. objectName.each
+	array = [1,2,3,4,5]	陣列中每個成員都去做x這個項目，do可以改成 {} =>object.each do{|item|}
+	array.each do |x|
+		x += 10
+		print x
+	end
+	語法:
+	numbers = [1, 2, 3, 4, 5]
+
+	# one way to loop
+	numbers.each { |item| puts item }
+
+	# another way to loop
+	numbers.each do |item|
+  	puts item
+	end
+	
+	family = { "Homer" => "dad",
+  	"Marge" => "mom",
+  	"Lisa" => "sister",
+  "Maggie" => "sister",
+  "Abe" => "grandpa",
+  "Santa's Little Helper" => "dog"
+}
+
+friends.each { |x| puts "#{x}" }
+
+*When iterating over hashes, we need two placeholder variables to represent each key/value pair.
+	e.g. family.each { |x, y| puts "#{x}: #{y}" }
+	
+	2. .times很像for迴圈，要執行幾次直接寫在頭即可
+	語法:
+	數字(次數).times{動作} 
+	10.times{print "o"} =>印出10個o
+
+陣列:
+Hash: ("key" => value)
+	1.
+	my_hash = { "name" => "Eric",
+  		"age" => 26,
+  		"hungry?" => true
+	}
+	2.
+	hash_name = Hash.new
+	hash_name["key"] = value	=>也可以這樣派值給key
+	3.
+	hash_name = Hash.new("預設值")
+	這時候print出hash_name為空集合 {}
+	print出hash_name["key"]則會印出 預設值；因為這個hash裡面沒有key-value對照只有一個預設值
+	
+method:
+	語法：				
+	def method_name (arg,*args)	*arg這個參數為splat arguments，就是跟ruby講說不知道有幾個參數要匯入，*名字
+		statements
+	end	
+	應用：								result:
+	def what_up(greeting, *bros)						What up, Justin!
+  		bros.each { |bro| puts "#{greeting}, #{bro}!" }			What up, Ben!
+	end									What up, Kevin Sorbo!
+
+	兩個物件的比較：		用來排列(類似.sort! .reverse!):
+	objectA <=> objectB			fruits = ["orange", "apple", "banana", "pear", "grapes"]
+	當A>B時，return 0			fruits.sort!{|x,y| y<=>x}
+	當A=B時，return 1			
+	當A<B時，return -1			

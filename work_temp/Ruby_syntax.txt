@@ -1,0 +1,62 @@
+﻿ruby可以用符號(:)來當變數(:varName)
+可以用.object_id來看產生時，ruby給的物件ID；符號變數的ID都一致而一樣的字串卻有不同的ID
+把變數變成符號變數： 
+	varName.to_sym會變成 :varName
+	varName.intern也會
+
+基本語法特徵:
+ruby內所有的變數都要用物件的方式看待。
+變數不需要宣告型別，其變數型別是根據值決定。
+
+沒有 ++a or a++ 語法。
+
+a**2 指的是a平方
+a**3 指的是a立方
+a**4 依此類推......
+
+a ||= X 當a不含任何值時，才會將x做為內容，反之不會改變a值。
+
+不需要 ; 做程式區隔
+
+a:區域變數，只活在方法內的變數。
+@a:實體變數，當產生新物件實體時，class裡才需要出現的變數。
+@@a:類別變數，不用產生物件實體，class就有的變數。
+$a:全域變數，任何位置都能使用的變數。
+
+迴圈特徵：
+沒有大括號{} 一律用 end 作為區塊界線。
+
+if 和 unless 用法:
+if TRUE				unless FALSE
+(elsif TRUE)		else
+else				end
+end
+
+簡寫
+XXXXXX if TRUE	
+XXXXXX unless FALSE
+
+
+whlie 和 until 用法:
+while TRUE			until FALSE
+end					end
+
+case 用法:
+case XXX
+when a
+when b
+when c
+else
+end
+
+方法特徵：
+結構
+def XXX
+
+end
+有 private public 權限
+
+
+
+
+

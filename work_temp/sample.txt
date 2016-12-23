@@ -1,0 +1,47 @@
+猴子都懂的
+
+add 修改加入書籤
+commit 記錄索引的狀態
+pull 取得遠端數據庫的內容
+============================
+Feature: Greeting 
+  Scenario: Say hello world 
+    Given I have a greeting application with "Hello" 
+    When I ask it to say hi 
+    Then I receive "Hello World"
+
+上面這個驗收測試的意思是說：「我有一隻greeting應用程式，在啟動它的時候同時傳給它 "Hello"這個字串。當我呼叫它的hi功能，我會收到 "Hello World"」。雖然上面的驗收測試是用英文撰寫，但Cucumber的驗收測試其實支援40幾種不同的語言，其中包含了正體中文，日後有機會再介紹用正體中文撰寫驗收測試的例子。一個Cucumber的驗收測試檔案要描述在.feature的文字檔當中，這個檔案有三個基本元素：
+
+Feature：一個feature代表一個功能，大小相當於一個user story。以ATM（提款機）應用程式為例子，feature包含「身分驗證」 、「提款」 、「轉帳」 、「繳費」 、「餘額查詢」 等 。
+
+Scenario：一個功能的操作路徑，以ATM的「提款」feature為例子，可能包含「提款成功」 、「餘額不足」、 「密碼錯誤」 、「卡片無法讀取」、「金資中心連線錯誤」、「提款機現金不足」 、「銀行暫停作業」等scenario。以驗收測試的角度來看，一個scenario就是一個驗收測試案例。因為一個feature可以包含好幾的scenario，所以一個Cucumber的.feature檔案相當於好幾的測試案例，如果這些測試案例全部通過，就代表這個feature通過驗收條件。
+
+Steps：一個scenario的操作步驟。在Cucumber裡面scenario的標準寫法由given-when-then所組成。
+	Given的步驟用來描述要準備那些測試環境（相當於單元測試裡面的準備test fixture），
+	When的步驟用來描述如何執行待測程式（相當於單元測試裡面的execution），
+	Then的步驟用來描述如何驗證測試是否成功（相當於單元測試裡面的assertion）。
+============================
+UAT (user acceptance test )  驗收測試
+
+系統開發完成後交由使用者測試是否功能正常的驗收動作
+
+SIT: system integration test  系統整合測試
+
+Unit test: 單元測試
+
+Black box test: 黑箱測試
+
+White box test: 白箱測試
+
+Stress test: 壓力測試
+
+Regression test: 回歸測試
+
+Integration test: 整合測試
+
+Alpha test:內部測試人員做測試 
+
+Beta test: 外部使用者做測試 
+
+Monkey test: 惡搞測試
+=============================
